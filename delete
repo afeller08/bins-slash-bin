@@ -1,0 +1,9 @@
+suffix=`.suffixes get $1`
+.suffixes del $1
+if [ $suffix = "sh" ]; then
+    mv $BINPATH/$1 $BINPATH/.trash/$1.$suffix
+else
+    rm $BINPATH/$1
+    mv $BINPATH/.src/$suffix/$1.$suffix $BINPATH/.trash/$1.$suffix
+fi
+

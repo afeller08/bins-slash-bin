@@ -1,0 +1,26 @@
+suffix=${1##*.}
+full_name=${1##*/}
+name=${full_name%.*}
+if [ -e $1 ]; then
+    if [ $suffix = "sh" ]; then
+        mv $1 $BINPATH/$name
+    else
+        path=$BINPATH/.src/$suffix/$full_name
+        if [ $1 != $path ]; then
+            mv $1 $path
+        fi
+        if [ $suffix = "c" ]; then
+            gcc $BINPATH/.src/c/$name -o $BINPATH/$name
+        elif [ $suffix = "py" ]; then
+            echo "python $BINPATH/.src/py/$full_name \$*" >$BINPATH/$name
+        fi
+    fi
+    chmod +x $BINPATH/$name
+    .suffixes set $name $suffix
+else
+    vim $1
+    if [ -e $1 ]; then
+        bn $1
+    fi
+fi
+

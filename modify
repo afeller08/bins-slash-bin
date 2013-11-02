@@ -1,0 +1,15 @@
+name=$1
+suffix=`.suffixes get $1`
+full_name=${name}.${suffix}
+if [ "${suffix}" == "sh" ]; then
+    name=$BINPATH/$name
+    full_name=$BINPATH/$full_name
+    mv $name $full_name
+    vim $full_name
+    mv $full_name $name
+else
+    path=${BINPATH}/.src/${suffix}/${full_name}
+    vim $path
+    bn $path
+fi
+
