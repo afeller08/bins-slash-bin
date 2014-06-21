@@ -1,0 +1,14 @@
+[ ! -f __init__.py ] && echo >__init__.py
+for item in *; do
+    if [ -d "$item" ]; then
+        cd $item
+        pyclean
+        cd ..
+    fi
+    pyc='pyc'
+    ext="${item##*.}"
+    file="${item%.*}"
+    if [ "${pyc}" = "${ext}" ]; then
+        [ ! -f ${file}.py ] && rm ${item}
+    fi
+done

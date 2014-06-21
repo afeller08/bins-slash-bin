@@ -1,1 +1,7 @@
-bn $BINPATH/.trash/$1
+name=$1
+suffix=${1##*.}
+if [ $suffix = $name ]; then
+    name=${1}.sh
+fi
+bn $BINPATH/.trash/$name
+

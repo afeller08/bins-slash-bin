@@ -1,0 +1,2 @@
+path=`xdg-user-dir PICTURES`
+sleep 2s; import -window root ${path}/${1}_screenshot.png

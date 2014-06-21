@@ -5,5 +5,11 @@
 modify sh
 bn sh
 restore sh
-delete sh
 commands py
+delete sh
+nothing sh
+picture sh
+pyclean sh
+cleanpy sh
+mkdir sh
+test.py sh

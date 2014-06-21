@@ -1,0 +1,14 @@
+dir=$1
+ext=${dir##*.}
+if [ "$ext" = "py" ]; then
+    dir=${dir%%.*}
+    /bin/mkdir $dir
+    if [ -d $dir ]; then
+        cd $dir
+        /bin/mkdir tests
+        /bin/mkdir visceral
+        pyclean
+    fi
+else
+    /bin/mkdir $dir
+fi
