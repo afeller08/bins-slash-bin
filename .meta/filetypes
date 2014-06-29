@@ -7,9 +7,11 @@ bn sh
 restore sh
 commands py
 delete sh
-nothing sh
 picture sh
 pyclean sh
 cleanpy sh
 mkdir sh
 test.py sh
+adjust_settings sh
+ajust_settings sh
+sync_bin sh

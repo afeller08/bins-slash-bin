@@ -1,0 +1,4 @@
+cd $BINPATH
+git stage .
+git commit
+git push

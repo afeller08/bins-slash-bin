@@ -10,5 +10,5 @@ if [ "$ext" = "py" ]; then
         pyclean
     fi
 else
-    /bin/mkdir $dir
+    /bin/mkdir "$@"
 fi
